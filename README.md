@@ -1,9 +1,10 @@
 ---
 title: Unhinged Ai
-emoji: ⚡
+emoji: 👁
 colorFrom: pink
 colorTo: indigo
 sdk: docker
 pinned: false
 license: mit
+short_description: unhinged ai
 ---
