@@ -26,7 +26,7 @@ COPY . .
 
 EXPOSE 7860
 
-RUN chmod -R 777 /
+RUN chmod -R 777 /app
 
 RUN deno install --entrypoint main.ts
 
