@@ -26,4 +26,6 @@ COPY . .
 
 EXPOSE 7860
 
+RUN chmod -R 777 /home
+
 CMD ["deno", "run", "-A", "main.ts"]
