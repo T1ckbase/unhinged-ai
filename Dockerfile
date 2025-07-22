@@ -28,4 +28,8 @@ EXPOSE 7860
 
 RUN chmod -R 777 /home
 
+RUN deno install --entrypoint main.ts
+
+RUN deno cache main.ts
+
 CMD ["deno", "run", "-A", "main.ts"]
