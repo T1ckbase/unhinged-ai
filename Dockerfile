@@ -20,6 +20,8 @@ RUN apt-get update && \
 
 RUN curl -fsSL https://deno.land/install.sh | sh -s -- -y
 
+ENV PATH="/root/.deno/bin:${PATH}"
+
 COPY . .
 
 EXPOSE 7860
