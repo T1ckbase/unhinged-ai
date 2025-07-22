@@ -1,0 +1,27 @@
+{
+  "$schema": "https://raw.githubusercontent.com/denoland/deno/refs/heads/main/cli/schemas/config-file.v1.json",
+  "tasks": {
+    "start": "deno run --allow-net --allow-env --env-file=.env main.ts"
+  },
+  "imports": {
+    "@ai-sdk/google": "npm:@ai-sdk/google@^1",
+    "@std/async": "jsr:@std/async@^1",
+    "ai": "npm:ai@^4",
+    "dedent": "npm:dedent@^1",
+    "zod": "npm:zod@^3"
+  },
+  "fmt": {
+    "indentWidth": 2,
+    "lineWidth": 160,
+    "proseWrap": "preserve",
+    "semiColons": true,
+    "singleQuote": true,
+    "useTabs": false
+  },
+  "lint": {
+    "rules": {
+      "exclude": ["require-await"]
+    }
+  },
+  "unstable": ["raw-imports"]
+}
