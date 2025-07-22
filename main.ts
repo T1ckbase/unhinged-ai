@@ -3,7 +3,6 @@ import { delay } from '@std/async';
 import { CoreMessage, generateText } from 'ai';
 import { google } from '@ai-sdk/google';
 import { executeBash } from './bash.ts';
-import dedent from 'dedent';
 import SYSTEM_PROMPT from './system_prompt.md' with { type: 'text' };
 
 const messages: CoreMessage[] = [
@@ -15,7 +14,7 @@ const messages: CoreMessage[] = [
   // { role: 'user', content: 'Welcome to Ubuntu 24.04.1 LTS' },
 ];
 
-// Deno.serve({ port: 7860, hostname: '0.0.0.0' }, (_req) => new Response(JSON.stringify(messages, null, 2)));
+Deno.serve({ port: 7860, hostname: '0.0.0.0' }, (_req) => new Response(JSON.stringify(messages, null, 2)));
 
 const model = google('gemma-3-27b-it');
 
@@ -29,6 +28,15 @@ while (true) {
     });
 
     const command = result.text.trim();
+
+    console.log([
+      '---',
+      'Assistant',
+      '---',
+      command,
+      '',
+    ].join('\n'));
+
     const output = await executeBash(command);
 
     messages.push(
@@ -36,17 +44,13 @@ while (true) {
       { role: 'user', content: output },
     );
 
-    console.log(dedent`
-      ---
-      Assistant
-      ---
-      ${command}
-
-      ---
-      Bash Output
-      ---
-      ${output}
-    `);
+    console.log([
+      '---',
+      'Bash Output',
+      '---',
+      output,
+      '',
+    ].join('\n'));
 
     await delay(1000);
   } catch (error) {

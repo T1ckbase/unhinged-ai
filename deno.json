@@ -7,7 +7,6 @@
     "@ai-sdk/google": "npm:@ai-sdk/google@^1",
     "@std/async": "jsr:@std/async@^1",
     "ai": "npm:ai@^4",
-    "dedent": "npm:dedent@^1",
     "zod": "npm:zod@^3"
   },
   "fmt": {
