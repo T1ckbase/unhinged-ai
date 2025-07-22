@@ -18,7 +18,7 @@ RUN apt-get update && \
     && \
     rm -rf /var/lib/apt/lists/*
 
-RUN curl -fsSL https://deno.land/install.sh | sh -y
+RUN curl -fsSL https://deno.land/install.sh | sh -s -- -y
 
 COPY . .
 
