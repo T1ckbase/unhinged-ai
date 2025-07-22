@@ -7,7 +7,7 @@ USER root
 ENV NO_COLOR=1
 
 RUN apt-get update && \
-    DEBIAN_FRONTEND=noninteractive apt-get install -y \
+    DEBIAN_FRONTEND=noninteractive apt-get install -yqq \
     curl \
     unzip \
     tar \
@@ -15,6 +15,13 @@ RUN apt-get update && \
     bzip2 \
     xz-utils \
     ripgrep \
+    git \
+    wget \
+    build-essential \
+    iputils-ping \
+    net-tools \
+    procps \
+    less \
     && \
     rm -rf /var/lib/apt/lists/*
 
