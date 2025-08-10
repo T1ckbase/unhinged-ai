@@ -22,6 +22,7 @@ RUN apt-get update && \
     net-tools \
     procps \
     less \
+    dnsutils \
     && \
     rm -rf /var/lib/apt/lists/*
 
