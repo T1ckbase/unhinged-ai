@@ -16,6 +16,7 @@ RUN apt-get update && \
     xz-utils \
     ripgrep \
     git \
+    gh \
     wget \
     build-essential \
     iputils-ping \
@@ -23,6 +24,7 @@ RUN apt-get update && \
     procps \
     less \
     dnsutils \
+    imagemagick \
     && \
     rm -rf /var/lib/apt/lists/*
 
